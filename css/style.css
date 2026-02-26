@@ -64,8 +64,15 @@ img {
   position: relative;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100dvh;
+  height: 100vh; /* fallback for older browsers */
   overflow: hidden;
+}
+
+@supports (height: 100dvh) {
+  .scene {
+    height: 100dvh;
+  }
 }
 
 /* ========== Parallax Background Layers ========== */
@@ -264,7 +271,11 @@ html:not([data-theme="dark"]) .theme-icon--light {
 /* ========== Responsive ========== */
 @media (max-width: 768px) {
   .title {
-    margin-top: 10vh;
+    margin-top: 8vh;
+  }
+
+  .footer {
+    padding: 0.5rem;
   }
 
   .footer-link img {
@@ -273,10 +284,26 @@ html:not([data-theme="dark"]) .theme-icon--light {
   }
 }
 
-@media (max-height: 600px) {
+@media (max-height: 700px) {
   .title {
-    margin-top: 6vh;
-    font-size: clamp(1.5rem, 5vw, 3rem);
+    margin-top: 5vh;
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+  }
+
+  .footer {
+    padding: 0.4rem;
+  }
+
+  .footer-link img {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (max-height: 500px) {
+  .title {
+    margin-top: 2vh;
+    font-size: clamp(1.2rem, 4vw, 2rem);
   }
 }
 
