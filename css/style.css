@@ -1,0 +1,335 @@
+/* ========== Theme Variables ========== */
+:root {
+  --bg: #ffffff;
+  --text: #333333;
+  --text-secondary: #95a5a6;
+  --texture-opacity: 1;
+  --texture-filter: none;
+  --cloud-opacity: 1;
+  --cloud-filter: none;
+  --logo-invert: 0;
+  --footer-bg: rgba(255, 255, 255, 0.6);
+  --toggle-bg: rgba(255, 255, 255, 0.8);
+  --toggle-border: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+  --bg: #0f0f1a;
+  --text: #e0e0e0;
+  --text-secondary: #7a8a9b;
+  --texture-opacity: 0.12;
+  --texture-filter: invert(1);
+  --cloud-opacity: 0.4;
+  --cloud-filter: invert(1) brightness(0.6);
+  --logo-invert: 1;
+  --footer-bg: rgba(15, 15, 26, 0.7);
+  --toggle-bg: rgba(30, 30, 50, 0.8);
+  --toggle-border: rgba(255, 255, 255, 0.1);
+}
+
+/* ========== Reset & Base ========== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  line-height: 1.3;
+  overflow-x: hidden;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+a, img {
+  border: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ========== Scene (full-viewport container) ========== */
+.scene {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ========== Parallax Background Layers ========== */
+.parallax-layer {
+  position: absolute;
+  inset: 0;
+  background-repeat: repeat-x;
+  pointer-events: none;
+  opacity: var(--texture-opacity);
+  filter: var(--texture-filter);
+  transition: opacity 0.5s ease, filter 0.5s ease;
+}
+
+.parallax-body {
+  background-image: url('/images/Fon.png');
+  background-position: -10% 0;
+  z-index: 0;
+}
+
+.parallax-outer {
+  background-image: url('/images/Fon1.png');
+  background-position: 70% 0;
+  z-index: 1;
+}
+
+.parallax-inner {
+  background-image: url('/images/Fon3.png');
+  background-position: 300% 0;
+  z-index: 2;
+}
+
+/* ========== Cloud Layers ========== */
+.cloud-layer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 3;
+  pointer-events: none;
+  opacity: var(--cloud-opacity);
+  filter: var(--cloud-filter);
+  transition: opacity 0.5s ease, filter 0.5s ease;
+}
+
+.cloud-strip {
+  /* wider than viewport by one tile width so translate is seamless */
+  height: 100%;
+  background-repeat: repeat-x;
+  will-change: transform;
+}
+
+/* far-clouds1.png = 1068px wide */
+@keyframes cloud-scroll-1068 {
+  from { transform: translateX(0); }
+  to { transform: translateX(-1068px); }
+}
+
+/* near-clouds.png, near-clouds1.png = 1268px wide */
+@keyframes cloud-scroll-1268 {
+  from { transform: translateX(0); }
+  to { transform: translateX(-1268px); }
+}
+
+.cloud-far .cloud-strip {
+  width: calc(100% + 1068px);
+  background-image: url('/images/far-clouds1.png');
+  background-position: 0 12vh;
+  animation: cloud-scroll-1068 55s linear infinite;
+}
+
+.cloud-near .cloud-strip {
+  width: calc(100% + 1268px);
+  background-image: url('/images/near-clouds.png');
+  background-position: 0 30vh;
+  animation: cloud-scroll-1268 40s linear infinite;
+}
+
+.cloud-near-alt .cloud-strip {
+  width: calc(100% + 1268px);
+  background-image: url('/images/near-clouds1.png');
+  background-position: 0 55vh;
+  animation: cloud-scroll-1268 80s linear infinite;
+}
+
+/* ========== Content ========== */
+.content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  padding: 0 1rem;
+  min-height: 0;
+}
+
+.title {
+  text-align: center;
+  font-size: clamp(2rem, 6vw, 4.5rem);
+  font-weight: 200;
+  line-height: 1;
+  margin-top: 14vh;
+}
+
+/* ========== Logo ========== */
+.logo {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: min(300px, 40vh);
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: invert(var(--logo-invert));
+  transition: filter 3s ease;
+}
+
+.logo img:hover {
+  filter: invert(var(--logo-invert)) blur(5px);
+}
+
+/* ========== Footer ========== */
+.footer {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: var(--footer-bg);
+  backdrop-filter: blur(8px);
+  transition: background 0.5s ease;
+}
+
+.footer-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-link img {
+  width: 50px;
+  height: 50px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.footer-link:hover img {
+  transform: scale(1.15);
+  opacity: 0.8;
+}
+
+/* ========== Theme Toggle ========== */
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--toggle-border);
+  border-radius: 50%;
+  background: var(--toggle-bg);
+  backdrop-filter: blur(8px);
+  color: var(--text);
+  cursor: pointer;
+  transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.theme-toggle:hover {
+  opacity: 0.8;
+}
+
+.theme-icon {
+  display: none;
+}
+
+/* Light theme: show sun icon */
+:root:not([data-theme="dark"]) .theme-icon--light,
+html:not([data-theme="dark"]) .theme-icon--light {
+  display: block;
+}
+
+/* Dark theme: show moon icon */
+[data-theme="dark"] .theme-icon--dark {
+  display: block;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 768px) {
+  .title {
+    margin-top: 10vh;
+  }
+
+  .footer-link img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-height: 600px) {
+  .title {
+    margin-top: 6vh;
+    font-size: clamp(1.5rem, 5vw, 3rem);
+  }
+}
+
+/* ========== Mobile: faster clouds + auto-drift textures ========== */
+@keyframes texture-drift {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(60px); }
+}
+
+@media (hover: none) {
+  .parallax-layer {
+    left: -70px;
+    right: -70px;
+  }
+
+  .cloud-far .cloud-strip {
+    animation-duration: 25s;
+  }
+
+  .cloud-near .cloud-strip {
+    animation-duration: 18s;
+  }
+
+  .cloud-near-alt .cloud-strip {
+    animation-duration: 35s;
+  }
+
+  .parallax-body {
+    animation: texture-drift 18s ease-in-out infinite;
+  }
+
+  .parallax-outer {
+    animation: texture-drift 24s ease-in-out infinite;
+    animation-delay: -8s;
+  }
+
+  .parallax-inner {
+    animation: texture-drift 14s ease-in-out infinite;
+    animation-delay: -10s;
+  }
+}
+
+/* ========== Reduced Motion ========== */
+@media (prefers-reduced-motion: reduce) {
+  .cloud-strip,
+  .parallax-layer {
+    animation-play-state: paused;
+  }
+
+  .logo img,
+  .footer-link img,
+  .theme-toggle,
+  .parallax-layer {
+    transition: none;
+  }
+}

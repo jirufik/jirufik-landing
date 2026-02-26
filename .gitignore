@@ -1,0 +1,21 @@
+node_modules/
+dist/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.iws
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Claude Code
+.claude/
+
+# Plan (local only)
+PLAN.md

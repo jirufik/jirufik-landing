@@ -1,0 +1,11 @@
+services:
+  jirufik-landing:
+    build: .
+    container_name: jirufik-landing
+    restart: unless-stopped
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true

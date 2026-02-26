@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Jirufik, jirufik@gmail.com">
+  <meta name="description" content="Jirufik developer, 1C, JS, NodeJS">
+  <meta name="keywords" content="jirufik, programmer, developer, жЫруфик, жируфик">
+
+  <title>Jirufik</title>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/images/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="scene">
+    <!-- Background parallax layers -->
+    <div class="parallax-layer parallax-body"></div>
+    <div class="parallax-layer parallax-outer"></div>
+    <div class="parallax-layer parallax-inner"></div>
+
+    <!-- Cloud layers (CSS animated) -->
+    <div class="cloud-layer cloud-far" aria-hidden="true">
+      <div class="cloud-strip"></div>
+    </div>
+    <div class="cloud-layer cloud-near" aria-hidden="true">
+      <div class="cloud-strip"></div>
+    </div>
+    <div class="cloud-layer cloud-near-alt" aria-hidden="true">
+      <div class="cloud-strip"></div>
+    </div>
+
+    <!-- Content -->
+    <main class="content">
+      <h1 class="title">Jirufik Developer</h1>
+
+      <div class="logo">
+        <a href="mailto:jirufik@gmail.com" aria-label="Contact Jirufik">
+          <img src="/images/Jirufik7_300.png" alt="Jirufik" width="300" height="400">
+        </a>
+      </div>
+    </main>
+
+    <footer class="footer">
+    <a href="https://magicball.rufus.pro" class="footer-link" aria-label="Magic Ball">
+      <img src="/images/magicball.png" alt="Magic Ball" width="50" height="50">
+    </a>
+    <a href="https://caferacer.rufus.pro" class="footer-link" aria-label="Cafe Racer">
+      <img src="/images/caferacer.png" alt="Cafe Racer" width="50" height="50">
+    </a>
+    <a href="mailto:jirufik@gmail.com" class="footer-link" aria-label="Email">
+      <img src="/images/email.png" alt="Email" width="50" height="50">
+    </a>
+    </footer>
+  </div>
+
+  <!-- Theme toggle -->
+  <button class="theme-toggle" aria-label="Toggle theme" type="button">
+    <svg class="theme-icon theme-icon--light" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="12" cy="12" r="5"/>
+      <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+    </svg>
+    <svg class="theme-icon theme-icon--dark" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+    </svg>
+  </button>
+
+  <script type="module" src="/js/main.js"></script>
+</body>
+</html>
