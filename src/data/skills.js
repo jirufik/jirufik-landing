@@ -1,0 +1,131 @@
+// Toolbox on the About page. `icon` is a simple-icons slug (CC0); items
+// without one are shown as text. Group titles live in the i18n files.
+
+export const skillGroups = [
+  {
+    id: 'languages',
+    items: [
+      { name: 'TypeScript', icon: 'typescript' },
+      { name: 'JavaScript', icon: 'javascript' },
+      { name: 'Python', icon: 'python' },
+      { name: 'SQL' },
+      { name: 'C++', icon: 'cplusplus' },
+    ],
+  },
+  {
+    id: 'backend',
+    items: [
+      { name: 'Node.js', icon: 'nodedotjs' },
+      { name: 'NestJS', icon: 'nestjs' },
+      { name: 'FastAPI', icon: 'fastapi' },
+      { name: 'Fastify', icon: 'fastify' },
+      { name: 'Express', icon: 'express' },
+      { name: 'Koa', icon: 'koa' },
+      { name: 'GraphQL', icon: 'graphql' },
+      { name: 'Socket.IO', icon: 'socketdotio' },
+      { name: 'gRPC' },
+      { name: 'OpenAPI', icon: 'openapiinitiative' },
+    ],
+  },
+  {
+    id: 'data',
+    items: [
+      { name: 'PostgreSQL', icon: 'postgresql' },
+      { name: 'Redis', icon: 'redis' },
+      { name: 'MongoDB', icon: 'mongodb' },
+      { name: 'BigQuery', icon: 'googlebigquery' },
+      { name: 'Qdrant', icon: 'qdrant' },
+      { name: 'Microsoft SQL Server' },
+      { name: 'SQLAlchemy', icon: 'sqlalchemy' },
+      { name: 'pgvector' },
+      { name: 'MikroORM' },
+      { name: 'TypeORM' },
+    ],
+  },
+  {
+    id: 'messaging',
+    items: [
+      { name: 'Apache Kafka', icon: 'apachekafka' },
+      { name: 'RabbitMQ', icon: 'rabbitmq' },
+      { name: 'Debezium CDC' },
+    ],
+  },
+  {
+    id: 'infra',
+    items: [
+      { name: 'Docker', icon: 'docker' },
+      { name: 'Kubernetes', icon: 'kubernetes' },
+      { name: 'Helm', icon: 'helm' },
+      { name: 'GitLab CI/CD', icon: 'gitlab' },
+      { name: 'Ansible', icon: 'ansible' },
+      { name: 'Traefik', icon: 'traefikproxy' },
+      { name: 'NGINX', icon: 'nginx' },
+      { name: 'Cloudflare', icon: 'cloudflare' },
+      { name: 'Google Cloud', icon: 'googlecloud' },
+      { name: 'AWS' },
+      { name: 'OpenID Connect', icon: 'openid' },
+      { name: 'Linux', icon: 'linux' },
+    ],
+  },
+  {
+    id: 'observability',
+    items: [
+      { name: 'OpenTelemetry', icon: 'opentelemetry' },
+      { name: 'Prometheus', icon: 'prometheus' },
+      { name: 'Grafana', icon: 'grafana' },
+      { name: 'Jaeger' },
+      { name: 'VictoriaMetrics', icon: 'victoriametrics' },
+      { name: 'OpenSearch', icon: 'opensearch' },
+      { name: 'ELK', icon: 'elasticstack' },
+      { name: 'Graylog', icon: 'graylog' },
+      { name: 'Sentry', icon: 'sentry' },
+    ],
+  },
+  {
+    id: 'ai',
+    items: [
+      { name: 'Claude', icon: 'claude' },
+      { name: 'MCP', icon: 'modelcontextprotocol' },
+      { name: 'ONNX Runtime', icon: 'onnx' },
+      { name: 'TensorFlow.js', icon: 'tensorflow' },
+      { name: 'Ollama', icon: 'ollama' },
+      { name: 'Hugging Face', icon: 'huggingface' },
+      { name: 'OpenCV', icon: 'opencv' },
+      { name: 'InsightFace' },
+      { name: 'PaddleOCR' },
+      { name: 'RAG' },
+    ],
+  },
+  {
+    id: 'frontend',
+    items: [
+      { name: 'Vue.js', icon: 'vuedotjs' },
+      { name: 'Nuxt', icon: 'nuxt' },
+      { name: 'Angular', icon: 'angular' },
+      { name: 'React', icon: 'react' },
+      { name: 'Tailwind CSS', icon: 'tailwindcss' },
+      { name: 'Quasar', icon: 'quasar' },
+      { name: 'Vite', icon: 'vite' },
+      { name: 'Phaser' },
+    ],
+  },
+  {
+    id: 'quality',
+    items: [
+      { name: 'Vitest', icon: 'vitest' },
+      { name: 'Jest', icon: 'jest' },
+      { name: 'Playwright' },
+      { name: 'pytest', icon: 'pytest' },
+      { name: 'Storybook', icon: 'storybook' },
+    ],
+  },
+  {
+    id: 'hardware',
+    items: [
+      { name: 'Arduino', icon: 'arduino' },
+      { name: 'ESP32', icon: 'espressif' },
+      { name: 'WLED' },
+      { name: '1C:Enterprise' },
+    ],
+  },
+];

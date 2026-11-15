@@ -1,38 +1,6 @@
-// ========== Theme Toggle ==========
+import { initTheme } from './theme.js';
 
-const THEME_KEY = 'jirufik-theme';
-
-function getPreferredTheme() {
-  const saved = localStorage.getItem(THEME_KEY);
-  if (saved) return saved;
-  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-}
-
-function applyTheme(theme) {
-  if (theme === 'dark') {
-    document.documentElement.setAttribute('data-theme', 'dark');
-  } else {
-    document.documentElement.removeAttribute('data-theme');
-  }
-  localStorage.setItem(THEME_KEY, theme);
-}
-
-function toggleTheme() {
-  const current = document.documentElement.hasAttribute('data-theme') ? 'dark' : 'light';
-  applyTheme(current === 'dark' ? 'light' : 'dark');
-}
-
-// Apply theme immediately (before DOMContentLoaded to avoid flash)
-applyTheme(getPreferredTheme());
-
-document.querySelector('.theme-toggle')?.addEventListener('click', toggleTheme);
-
-// Listen for system theme changes
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-  if (!localStorage.getItem(THEME_KEY)) {
-    applyTheme(e.matches ? 'dark' : 'light');
-  }
-});
+initTheme();
 
 // ========== Parallax ==========
 
