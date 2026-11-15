@@ -54,10 +54,13 @@ ${head({
   </div>
 
   <div class="corner">
-    ${langSwitch(t, lang, 'home')}
-    <button class="theme-toggle" type="button" aria-label="${t.themeToggle}">
-      ${icon('sun', 'theme-icon theme-icon--light')}${icon('moon', 'theme-icon theme-icon--dark')}
-    </button>
+    <button class="corner-toggle" type="button" aria-expanded="false" aria-controls="corner-panel" aria-label="${t.home.settings}" title="${t.home.settings}">${lang.toUpperCase()}</button>
+    <div class="corner-panel" id="corner-panel">
+      ${langSwitch(t, lang, 'home')}
+      <button class="theme-toggle" type="button" aria-label="${t.themeToggle}">
+        ${icon('sun', 'theme-icon theme-icon--light')}${icon('moon', 'theme-icon theme-icon--dark')}
+      </button>
+    </div>
   </div>
 
   <script type="module" src="/js/home.js"></script>

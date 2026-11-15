@@ -9,6 +9,7 @@ export default {
     description:
       'Jirufik, он же Rufus: разработчик с опытом более 20 лет. Разработка бэкенда и API, автоматизация бизнес-процессов, внедрение ИИ, инфраструктура. Беру проекты на удалёнке.',
     heading: 'Jirufik Developer',
+    settings: 'Язык и тема',
     logoLabel: 'Обо мне',
     emailLabel: 'Написать Jirufik на почту',
   },

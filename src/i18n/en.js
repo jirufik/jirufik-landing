@@ -9,6 +9,7 @@ export default {
     description:
       'Jirufik, also known as Rufus: software engineer with 20+ years of experience. Backend and API development, business process automation, AI integration and infrastructure. Available for remote projects.',
     heading: 'Jirufik Developer',
+    settings: 'Language and theme',
     logoLabel: 'About Jirufik',
     emailLabel: 'Email Jirufik',
   },

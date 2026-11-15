@@ -9,6 +9,7 @@ export default {
     description:
       'Jirufik eli Rufus: ohjelmistokehittäjä, jolla on yli 20 vuoden kokemus. Backend- ja API-kehitys, liiketoimintaprosessien automaatio, tekoälyn käyttöönotto ja infrastruktuuri. Otan vastaan etäprojekteja.',
     heading: 'Jirufik Developer',
+    settings: 'Kieli ja teema',
     logoLabel: 'Tietoa Jirufikista',
     emailLabel: 'Lähetä Jirufikille sähköpostia',
   },

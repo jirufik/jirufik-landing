@@ -517,11 +517,9 @@ html {
   width: 48px;
   height: 48px;
   padding: 0;
-  border: 1px solid var(--line-strong);
+  border: 1.5px solid var(--line-strong);
   border-radius: 50%;
-  background: color-mix(in srgb, var(--paper) 88%, transparent);
-  -webkit-backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
+  background: transparent;
   color: var(--ink);
   cursor: pointer;
   opacity: 0;

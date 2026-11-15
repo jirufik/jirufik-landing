@@ -2,6 +2,31 @@ import { initTheme } from './theme.js';
 
 initTheme();
 
+// ========== Corner: language + theme, folded into one round button ==========
+
+const corner = document.querySelector('.corner');
+const cornerToggle = corner?.querySelector('.corner-toggle');
+
+if (corner && cornerToggle) {
+  const setOpen = (open) => {
+    corner.classList.toggle('is-open', open);
+    cornerToggle.setAttribute('aria-expanded', String(open));
+  };
+
+  cornerToggle.addEventListener('click', () => setOpen(!corner.classList.contains('is-open')));
+
+  document.addEventListener('click', (e) => {
+    if (!corner.contains(e.target)) setOpen(false);
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && corner.classList.contains('is-open')) {
+      setOpen(false);
+      cornerToggle.focus();
+    }
+  });
+}
+
 // ========== Parallax ==========
 
 const layers = [
